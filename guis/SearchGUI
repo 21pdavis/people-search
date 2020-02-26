@@ -1,0 +1,38 @@
+package gui;
+
+import javax.swing.*;
+import objects.Person;
+import BreezySwing.*;
+
+@SuppressWarnings({"serial", "unused"})
+public class SearchGUI extends GBDialog{
+	private UserDisplayAndEditGUI displayGUI;
+	private JLabel nameInputLabel = addLabel("Name: ", 1,1,1,1);
+	private JTextField nameInputField = addTextField("", 1,2,1,1);
+	private JLabel ageInputLabel = addLabel("Age: ", 2,1,1,1);
+	private JTextField ageInputField = addTextField("", 2,2,1,1);
+	private JButton sequentialSearchButton = addButton("Search Sequentially", 3,1,1,1);
+	private JButton binarySearchButton = addButton("Search Binarily", 3,2,1,1);
+	private JList<String> list = addList(4,1,1,1);
+	private DefaultListModel<String> model = (DefaultListModel<String>)list.getModel();
+	
+	public void buttonClicked(JButton buttonObj) {
+		if(buttonObj == sequentialSearchButton) {
+			
+		}
+		if(buttonObj == binarySearchButton) {
+			
+		}
+	}
+	
+	public SearchGUI(JFrame frm) {
+		super(frm);
+		setSize(400, 300);
+		setResizable(false);
+		setTitle("Search for a person");
+	}
+	
+	private void resetFrame() {
+		
+	}
+}
