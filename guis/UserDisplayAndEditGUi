@@ -1,0 +1,20 @@
+package gui;
+
+import javax.swing.*;
+import objects.Person;
+import BreezySwing.*;
+
+@SuppressWarnings({"serial", "unused"})
+public class UserDisplayAndEditGUI extends SearchGUI {
+
+	public UserDisplayAndEditGUI(JFrame frm, Person person) {
+		super(frm);
+		setSize(400, 300);
+		setResizable(false);
+		setTitle("Person Display");
+	}
+	
+	private void resetFrame() {
+		
+	}
+}
