@@ -1,0 +1,36 @@
+package gui;
+
+import javax.swing.*;
+import objects.Person;
+import BreezySwing.*;
+
+@SuppressWarnings({"serial", "unused"})
+public class AddPersonGUI extends GBDialog{
+	private JLabel inputInstructions = addLabel("Add a Person", 1,1,1,1);
+	private JLabel nameInputLabel = addLabel("Name: ", 2,1,1,1);
+	private JTextField nameInputField = addTextField("", 2,2,1,1);
+	private JLabel ageInputLabel = addLabel("Age: ", 3,1,1,1);
+	private JTextField ageInputField = addTextField("", 3,2,1,1);
+	private JButton addPersonButton = addButton("Add Person", 4,1,1,1);
+	
+	public AddPersonGUI(JFrame frm, Person[] people) {
+		super(frm);
+		setSize(400, 300);
+		setResizable(false);
+		setTitle("Add a Person");
+	}
+	
+	public void buttonClicked(JButton buttonObj) {
+		if(buttonObj == addPersonButton) {
+			
+		}
+	}
+	
+	private void addPerson() {
+		
+	}
+	
+	public void resetFrame() {
+		
+	}
+}
