@@ -1,0 +1,42 @@
+package gui;
+
+import BreezySwing.*;
+import objects.Person;
+import javax.swing.*;
+
+@SuppressWarnings({"serial", "unused"})
+public class MainGUI extends GBFrame{
+	private static JFrame frm = new MainGUI();
+	private Person[] people = new Person[0];
+	private AddPersonGUI addPersonGUI = new AddPersonGUI(frm, people);
+	private JButton openAddPersonWindowButton = addButton("Add Person", 1,1,1,1);
+	private JButton openSearchWindowButton = addButton("Open Search Window", 2,1,1,1);
+	private JButton exitButton = addButton("Exit", 3,1,1,1);
+	private JButton resetButton = addButton("Reset", 3,1,1,1);
+	
+	public void buttonClicked(JButton buttonObj) {
+		if(buttonObj == openAddPersonWindowButton) {
+			
+		}
+		if(buttonObj == openSearchWindowButton) {
+			
+		}
+		if(buttonObj == exitButton) {
+			
+		}
+		if(buttonObj == resetButton) {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		frm.setTitle("People Search Program");
+		frm.setSize(400,500);
+		frm.setResizable(false);
+		frm.setVisible(true);
+	}
+	
+	public void resetProgram() {
+		
+	}
+}
