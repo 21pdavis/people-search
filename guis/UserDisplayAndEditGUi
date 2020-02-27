@@ -6,15 +6,15 @@ import BreezySwing.*;
 
 @SuppressWarnings({"serial", "unused"})
 public class UserDisplayAndEditGUI extends SearchGUI {
-
-	public UserDisplayAndEditGUI(JFrame frm, Person person) {
-		super(frm);
+	
+	public UserDisplayAndEditGUI(JFrame frm, Person[] people) {
+		super(frm, people);
 		setSize(400, 300);
 		setResizable(false);
 		setTitle("Person Display");
 	}
 	
-	private void resetFrame() {
+	public void resetFrame() {
 		
 	}
 }
