@@ -6,15 +6,17 @@ import BreezySwing.*;
 
 @SuppressWarnings({"serial", "unused"})
 public class AddPersonGUI extends GBDialog{
-	private JLabel inputInstructions = addLabel("Add a Person", 1,1,1,1);
-	private JLabel nameInputLabel = addLabel("Name: ", 2,1,1,1);
-	private JTextField nameInputField = addTextField("", 2,2,1,1);
-	private JLabel ageInputLabel = addLabel("Age: ", 3,1,1,1);
-	private JTextField ageInputField = addTextField("", 3,2,1,1);
-	private JButton addPersonButton = addButton("Add Person", 4,1,1,1);
+	private Person[] people;
+	private JLabel nameInputLabel = addLabel("Name: ", 1,1,1,1);
+	private JTextField nameInputField = addTextField("", 1,2,1,1);
+	private JLabel ageInputLabel = addLabel("Age: ", 2,1,1,1);
+	private JTextField ageInputField = addTextField("", 2,2,1,1);
+	private JButton addPersonButton = addButton("Add Person", 3,1,1,1);
+	private JButton exitButton = addButton("Exit", 3,2,1,1);
 	
 	public AddPersonGUI(JFrame frm, Person[] people) {
 		super(frm);
+		this.people = people;
 		setSize(400, 300);
 		setResizable(false);
 		setTitle("Add a Person");
@@ -22,15 +24,28 @@ public class AddPersonGUI extends GBDialog{
 	
 	public void buttonClicked(JButton buttonObj) {
 		if(buttonObj == addPersonButton) {
-			
+			addPerson(nameInputField.getText(), Integer.parseInt(ageInputField.getText()));
+			messageBox("Person Successfully Added");
+			resetFrame();
+		}
+		if(buttonObj == exitButton) {
+			setVisible(false);
 		}
 	}
 	
-	private void addPerson() {
+	private void addPerson(String name, int age) {
+		Person[] people = new Person[this.people.length + 1];
 		
+		for(int i = 0; i < this.people.length; i++) {
+			people[i] = this.people[i];
+		}
+		
+		people[people.length - 1] = new Person(name, age);
+		this.people = people;
 	}
 	
 	public void resetFrame() {
-		
+		nameInputField.setText("");
+		ageInputField.setText("");
 	}
 }
